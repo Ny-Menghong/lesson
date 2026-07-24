@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syntax, Variables &amp; Echo — PHP — CodeForge Academy</title>
+<meta name="description" content="Learn PHP tags, echo, variables and conditionals with real server-side code examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="../../index.html" class="brand">
+      <span class="dots"><span></span><span></span><span></span></span>
+      CodeForge <small>&nbsp;academy</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../../courses.html">courses</a></li>
+      <li><a href="../../roadmap.html">roadmap</a></li>
+      <li><a href="../../pricing.html">pricing</a></li>
+      <li><a href="../../about.html">about</a></li>
+      <li><a href="../../contact.html">contact</a></li>
+      <li class="nav-cta"><a href="../../courses.html" class="btn btn-primary btn-sm">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../../index.html">Home</a><span class="sep">/</span><a href="../../courses.html">PHP</a><span class="sep">/</span><span class="here">Lesson 1</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-shell">
+
+    <aside class="lesson-sidebar">
+  <div class="ls-course">PHP course</div>
+  <nav>
+      <a href="lesson1.html" class="active" data-lesson-id="php-1"><span class="file-ico">01</span>Syntax, Variables &amp; Echo</a>
+    <div class="ls-divider"></div>
+    <a href="../../courses.html" class="ls-lessons-link">← All courses</a>
+  </nav>
+</aside>
+
+    <main class="lesson-content">
+      <div class="lesson-head">
+        <span class="eyebrow">PHP · Lesson 1 of 1</span>
+        <h1>Syntax, Variables &amp; Echo</h1>
+        <div class="lesson-meta-row">
+          <span class="m-item">⏱ 20 min</span>
+          <span class="m-item diff-beginner">● Beginner</span>
+        </div>
+        <div class="lesson-progress-wrap">
+          <div class="pw-label"><span>Course progress</span><span class="js-progress-text">0 / 1 lessons complete (0%)</span></div>
+          <div class="progress-track"><div class="progress-fill js-progress-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+  <button class="vp-btn">▶</button>
+  <span class="vp-caption">4:50 — PHP fundamentals</span>
+</div>
+
+<h2 id="intro">Introduction</h2>
+<p>PHP runs on the server, generating the HTML that gets sent to a visitor's browser before they ever see the page — it's what powers a huge share of the web, including WordPress. This lesson covers PHP tags, variables, and conditionals.</p>
+<h2 id="ch1">Chapter 1: PHP Tags &amp; Echo</h2>
+<p>PHP code lives between <code>&lt;?php</code> and <code>?&gt;</code> tags, often mixed directly into an HTML file. The <code>echo</code> statement outputs text into the page.</p>
+<div class="code-block">
+  <div class="cb-head"><span>index.php</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;&lt;?php echo &quot;Welcome to CodeForge Academy&quot;; ?&gt;&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+<div class="callout callout-note">
+  <div class="callout-title">Note</div>
+  <p>Rendered output (the HTML the visitor's browser receives):</p>
+</div>
+<div class="code-block">
+  <div class="cb-head"><span>output</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;h1&gt;Welcome to CodeForge Academy&lt;/h1&gt;</code></pre>
+</div>
+<h2 id="ch2">Chapter 2: Variables &amp; Concatenation</h2>
+<p>PHP variables always start with a dollar sign. Join strings together with the <code>.</code> operator.</p>
+<div class="code-block">
+  <div class="cb-head"><span>variables.php</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;?php
+$name = &quot;Maya&quot;;
+$coursesCompleted = 2;
+
+echo &quot;Hello, &quot; . $name . &quot;! You have completed &quot; . $coursesCompleted . &quot; courses.&quot;;
+?&gt;</code></pre>
+</div>
+<div class="callout callout-note">
+  <div class="callout-title">Note</div>
+  <p>Predicted output:</p>
+</div>
+<div class="code-block">
+  <div class="cb-head"><span>output</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>Hello, Maya! You have completed 2 courses.</code></pre>
+</div>
+<div class="callout callout-tip">
+  <div class="callout-title">Tip</div>
+  <p>Double-quoted PHP strings can interpolate variables directly: <code>"Hello, $name!"</code> works the same as concatenating with <code>.</code>, and is often easier to read.</p>
+</div>
+<h2 id="ch3">Chapter 3: Conditionals</h2>
+<p>PHP conditionals look almost identical to JavaScript's — <code>if</code>, <code>elseif</code>, <code>else</code> with curly braces.</p>
+<div class="code-block">
+  <div class="cb-head"><span>conditionals.php</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;?php
+$score = 8;
+
+if ($score === 10) {
+  echo &quot;Perfect score!&quot;;
+} elseif ($score &gt;= 6) {
+  echo &quot;Nice job!&quot;;
+} else {
+  echo &quot;Keep practicing.&quot;;
+}
+?&gt;</code></pre>
+</div>
+<div class="callout callout-note">
+  <div class="callout-title">Note</div>
+  <p>Predicted output:</p>
+</div>
+<div class="code-block">
+  <div class="cb-head"><span>output</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>Nice job!</code></pre>
+</div>
+<div class="callout callout-warning">
+  <div class="callout-title">Warning</div>
+  <p>PHP's keyword is <code>elseif</code> (one word) inside this chained form, unlike JavaScript's <code>else if</code> (two words) — mixing them up is a common source of syntax errors for learners coming from JS.</p>
+</div>
+<h2 id="practice">Practice</h2>
+<div class="practice-box">
+  <span class="practice-tag">Exercise</span>
+  <h3>Practice Challenge</h3>
+  <p>Write a PHP snippet that stores your name in a variable and echoes a greeting using string interpolation.</p>
+  <details class="practice-answer">
+    <summary>See a sample solution</summary>
+    <div class="code-block">
+  <div class="cb-head"><span>solution</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;?php
+$name = &quot;Jane&quot;;
+echo &quot;Hi, $name — welcome to PHP!&quot;;
+?&gt;
+
+// Output: Hi, Jane — welcome to PHP!</code></pre>
+</div>
+  </details>
+</div>
+
+      <div class="quiz-box" id="quizBox">
+  <div class="quiz-body">
+    <div class="quiz-progress"></div>
+    <div class="quiz-questions"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline btn-sm quiz-prev">← Previous</button>
+      <button class="btn btn-teal btn-sm quiz-next">Next →</button>
+      <button class="btn btn-primary btn-sm quiz-submit">Submit Quiz</button>
+    </div>
+  </div>
+  <div class="quiz-result"></div>
+</div>
+<script>window.QUIZ_DATA = [{"q": "How does a block of PHP code begin?", "options": ["<script php>", "<?php", "<php>", "#!/php"], "correct": 1, "explain": "PHP code blocks open with <?php and close with ?>."}, {"q": "What symbol must every PHP variable name start with?", "options": ["$", "@", "#", "%"], "correct": 0, "explain": "All PHP variables begin with a dollar sign, e.g. $name."}, {"q": "Which operator joins (concatenates) strings in PHP?", "options": ["+", "&", ".", "::"], "correct": 2, "explain": "PHP uses the dot (.) operator to concatenate strings."}, {"q": "What does echo do in PHP?", "options": ["Logs to the server terminal only", "Outputs text into the page's HTML", "Declares a variable", "Starts a loop"], "correct": 1, "explain": "echo sends output into the HTML response sent to the browser."}, {"q": "What is PHP's keyword for an additional condition after if?", "options": ["else if", "elif", "elseif", "otherwise"], "correct": 2, "explain": "PHP uses elseif as one word in this construct (else if with a space also works, but elseif is the idiomatic form)."}];</script>
+
+      <div class="mark-complete-row">
+        <button class="btn btn-primary" id="markCompleteBtn">Mark as Completed</button>
+        <span class="complete-note">Saved on this device — no account needed.</span>
+      </div>
+
+      <div class="lesson-footer-nav">
+  <span class="lfn-btn prev disabled"><span class="lfn-label">← Previous</span><span class="lfn-title">This is lesson 1</span></span>
+  <a class="lfn-btn next" href="../../courses.html"><span class="lfn-label">Next →</span><span class="lfn-title">Back to all courses</span></a>
+</div>
+    </main>
+
+    <aside class="lesson-toc">
+      <div class="toc-box">
+    <h4>On this page</h4>
+    <nav>
+      <a href="#intro">Introduction</a>
+      <a href="#ch1">Chapter 1: PHP Tags & Echo</a>
+      <a href="#ch2">Chapter 2: Variables & Concatenation</a>
+      <a href="#ch3">Chapter 3: Conditionals</a>
+      <a href="#practice">Practice</a>
+      <a href="#quizBox">Quiz</a>
+    </nav>
+  </div>
+      <div class="resources-box">
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="https://www.php.net/manual/en/" target="_blank" rel="noopener">↗ Official PHP manual</a></li>
+      <li><a href="https://phptherightway.com/" target="_blank" rel="noopener">↗ PHP: The Right Way</a></li>
+    </ul>
+    <button class="btn btn-outline btn-sm pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;"><span class="dots"><span></span><span></span><span></span></span> CodeForge</div>
+        <p class="tag">A project-based coding academy for people who'd rather build than binge lecture videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="../../courses.html">Courses</a>
+        <a href="../../roadmap.html">Roadmap</a>
+        <a href="../../pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="../../lessons/html/lesson1.html">HTML</a>
+        <a href="../../lessons/css/lesson1.html">CSS</a>
+        <a href="../../lessons/javascript/lesson1.html">JavaScript</a>
+        <a href="../../lessons/python/lesson1.html">Python</a>
+        <a href="../../lessons/php/lesson1.html">PHP</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CodeForge Academy. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.LESSON_ID = "php-1";
+  window.COURSE_ID = "php";
+  window.COURSE_LESSONS = ["php-1"];
+</script>
+<script src="../../js/script.js"></script>
+<script src="../../js/lesson.js"></script>
+</body>
+</html>

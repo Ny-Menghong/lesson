@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lists, Tables &amp; Forms — HTML — CodeForge Academy</title>
+<meta name="description" content="Learn HTML lists, tables and accessible forms with real, working examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../../index.html" class="brand">
+      <span class="dots"><span></span><span></span><span></span></span>
+      CodeForge <small>&nbsp;academy</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../../courses.html">courses</a></li>
+      <li><a href="../../roadmap.html">roadmap</a></li>
+      <li><a href="../../pricing.html">pricing</a></li>
+      <li><a href="../../about.html">about</a></li>
+      <li><a href="../../contact.html">contact</a></li>
+      <li class="nav-cta"><a href="../../courses.html" class="btn btn-primary btn-sm">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../../index.html">Home</a><span class="sep">/</span><a href="../../courses.html">HTML</a><span class="sep">/</span><span class="here">Lesson 3</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-shell">
+
+    <aside class="lesson-sidebar">
+  <div class="ls-course">HTML course</div>
+  <nav>
+      <a href="lesson1.html" class="" data-lesson-id="html-1"><span class="file-ico">01</span>Your First HTML Page</a>
+      <a href="lesson2.html" class="" data-lesson-id="html-2"><span class="file-ico">02</span>Text, Links &amp; Images</a>
+      <a href="lesson3.html" class="active" data-lesson-id="html-3"><span class="file-ico">03</span>Lists, Tables &amp; Forms</a>
+    <div class="ls-divider"></div>
+    <a href="../../courses.html" class="ls-lessons-link">← All courses</a>
+  </nav>
+</aside>
+
+    <main class="lesson-content">
+      <div class="lesson-head">
+        <span class="eyebrow">HTML · Lesson 3 of 3</span>
+        <h1>Lists, Tables &amp; Forms</h1>
+        <div class="lesson-meta-row">
+          <span class="m-item">⏱ 22 min</span>
+          <span class="m-item diff-beginner">● Beginner</span>
+        </div>
+        <div class="lesson-progress-wrap">
+          <div class="pw-label"><span>Course progress</span><span class="js-progress-text">0 / 3 lessons complete (0%)</span></div>
+          <div class="progress-track"><div class="progress-fill js-progress-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+  <button class="vp-btn">▶</button>
+  <span class="vp-caption">4:02 — Lists, tables and forms</span>
+</div>
+
+<h2 id="intro">Introduction</h2>
+<p>This lesson covers three workhorse elements: lists for grouping related items, tables for tabular data, and forms for collecting input from visitors.</p>
+<h2 id="ch1">Chapter 1: Lists</h2>
+<p>Use <code>&lt;ul&gt;</code> for an unordered (bulleted) list and <code>&lt;ol&gt;</code> for an ordered (numbered) one. Each item goes inside an <code>&lt;li&gt;</code>.</p>
+<div class="code-block">
+  <div class="cb-head"><span>lists.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Write the markup&lt;/li&gt;
+  &lt;li&gt;Style it with CSS&lt;/li&gt;
+  &lt;li&gt;Add behavior with JavaScript&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</div>
+<h2 id="ch2">Chapter 2: Tables</h2>
+<p>A table is built from rows (<code>&lt;tr&gt;</code>) containing header cells (<code>&lt;th&gt;</code>) or data cells (<code>&lt;td&gt;</code>), inside a <code>&lt;table&gt;</code>.</p>
+<div class="code-block">
+  <div class="cb-head"><span>tables.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Course&lt;/th&gt;
+    &lt;th&gt;Lessons&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;CSS&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+</div>
+<div class="callout callout-note">
+  <div class="callout-title">Note</div>
+  <p>Tables are for tabular data — rows and columns that relate to each other. Don't use a table to lay out an entire page; that's what CSS Flexbox and Grid are for.</p>
+</div>
+<h2 id="ch3">Chapter 3: Forms</h2>
+<p>A <code>&lt;form&gt;</code> collects input. Each field needs a matching <code>&lt;label&gt;</code> connected by a shared <code>id</code>/<code>for</code> pair, so clicking the label focuses the field — and so screen readers announce it correctly.</p>
+<div class="code-block">
+  <div class="cb-head"><span>forms.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;form&gt;
+  &lt;label for=&quot;name&quot;&gt;Your name&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;
+
+  &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+
+  &lt;label for=&quot;plan&quot;&gt;Choose a plan&lt;/label&gt;
+  &lt;select id=&quot;plan&quot; name=&quot;plan&quot;&gt;
+    &lt;option&gt;Free&lt;/option&gt;
+    &lt;option&gt;Pro&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Sign Up&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</div>
+<div class="callout callout-tip">
+  <div class="callout-title">Tip</div>
+  <p>Add <code>required</code> to a field and the browser will refuse to submit the form until it's filled in — no JavaScript needed.</p>
+</div>
+<div class="callout callout-warning">
+  <div class="callout-title">Warning</div>
+  <p>A form on its own does not send data anywhere; you need an <code>action</code> attribute and a server (or JavaScript) to actually process a submission.</p>
+</div>
+<h2 id="demo">Try It Yourself</h2>
+<div class="live-demo" data-mode="html">
+  <div class="ld-head">Add a list item, then click Run to see the change.</div>
+  <div class="ld-body">
+    <textarea spellcheck="false">&lt;ul&gt;
+  &lt;li&gt;Edit this list&lt;/li&gt;
+  &lt;li&gt;Add a third item&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+    <button class="btn btn-teal btn-sm ld-run">▶ Run Code</button>
+    <div class="ld-output"></div>
+  </div>
+</div>
+<h2 id="practice">Practice</h2>
+<div class="practice-box">
+  <span class="practice-tag">Exercise</span>
+  <h3>Practice Challenge</h3>
+  <p>Build a simple signup form with a labeled text input for name, a labeled email input, and a submit button.</p>
+  <details class="practice-answer">
+    <summary>See a sample solution</summary>
+    <div class="code-block">
+  <div class="cb-head"><span>solution</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;form&gt;
+  &lt;label for=&quot;n&quot;&gt;Name&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;n&quot; name=&quot;n&quot; required&gt;
+  &lt;label for=&quot;e&quot;&gt;Email&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;e&quot; name=&quot;e&quot; required&gt;
+  &lt;button type=&quot;submit&quot;&gt;Join&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+</div>
+  </details>
+</div>
+
+      <div class="quiz-box" id="quizBox">
+  <div class="quiz-body">
+    <div class="quiz-progress"></div>
+    <div class="quiz-questions"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline btn-sm quiz-prev">← Previous</button>
+      <button class="btn btn-teal btn-sm quiz-next">Next →</button>
+      <button class="btn btn-primary btn-sm quiz-submit">Submit Quiz</button>
+    </div>
+  </div>
+  <div class="quiz-result"></div>
+</div>
+<script>window.QUIZ_DATA = [{"q": "Which element creates a numbered list?", "options": ["<ul>", "<ol>", "<li>", "<dl>"], "correct": 1, "explain": "<ol> is the ordered (numbered) list; <ul> is unordered (bulleted)."}, {"q": "What goes inside every list item?", "options": ["<td>", "<tr>", "<li>", "<th>"], "correct": 2, "explain": "<li> wraps each item in both <ul> and <ol>."}, {"q": "Which element defines a header cell in a table?", "options": ["<td>", "<th>", "<tr>", "<head>"], "correct": 1, "explain": "<th> is a header cell; <td> is a normal data cell."}, {"q": "How do you connect a <label> to its input for accessibility?", "options": ["Nest them inside a <div>", "Matching id and for attributes", "Give them the same class", "Put them in the same <tr>"], "correct": 1, "explain": "The label's for attribute must match the input's id."}, {"q": "What does adding the required attribute to an input do?", "options": ["Nothing without JavaScript", "Blocks form submission until the field has a value", "Makes the field read-only", "Adds a red border permanently"], "correct": 1, "explain": "required is built-in browser validation \u2014 no JavaScript needed."}];</script>
+
+      <div class="mark-complete-row">
+        <button class="btn btn-primary" id="markCompleteBtn">Mark as Completed</button>
+        <span class="complete-note">Saved on this device — no account needed.</span>
+      </div>
+
+      <div class="lesson-footer-nav">
+  <a class="lfn-btn prev" href="lesson2.html"><span class="lfn-label">← Previous</span><span class="lfn-title">Text, Links &amp; Images</span></a>
+  <a class="lfn-btn next" href="../../courses.html"><span class="lfn-label">Next →</span><span class="lfn-title">Back to all courses</span></a>
+</div>
+    </main>
+
+    <aside class="lesson-toc">
+      <div class="toc-box">
+    <h4>On this page</h4>
+    <nav>
+      <a href="#intro">Introduction</a>
+      <a href="#ch1">Chapter 1: Lists</a>
+      <a href="#ch2">Chapter 2: Tables</a>
+      <a href="#ch3">Chapter 3: Forms</a>
+      <a href="#demo">Try It Yourself</a>
+      <a href="#practice">Practice</a>
+      <a href="#quizBox">Quiz</a>
+    </nav>
+  </div>
+      <div class="resources-box">
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul" target="_blank" rel="noopener">↗ MDN: Lists</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms" target="_blank" rel="noopener">↗ MDN: Forms guide</a></li>
+    </ul>
+    <button class="btn btn-outline btn-sm pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;"><span class="dots"><span></span><span></span><span></span></span> CodeForge</div>
+        <p class="tag">A project-based coding academy for people who'd rather build than binge lecture videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="../../courses.html">Courses</a>
+        <a href="../../roadmap.html">Roadmap</a>
+        <a href="../../pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="../../lessons/html/lesson1.html">HTML</a>
+        <a href="../../lessons/css/lesson1.html">CSS</a>
+        <a href="../../lessons/javascript/lesson1.html">JavaScript</a>
+        <a href="../../lessons/python/lesson1.html">Python</a>
+        <a href="../../lessons/php/lesson1.html">PHP</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CodeForge Academy. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.LESSON_ID = "html-3";
+  window.COURSE_ID = "html";
+  window.COURSE_LESSONS = ["html-1", "html-2", "html-3"];
+</script>
+<script src="../../js/script.js"></script>
+<script src="../../js/lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text, Links &amp; Images — HTML — CodeForge Academy</title>
+<meta name="description" content="Learn HTML text formatting, hyperlinks and images with real examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../../index.html" class="brand">
+      <span class="dots"><span></span><span></span><span></span></span>
+      CodeForge <small>&nbsp;academy</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../../courses.html">courses</a></li>
+      <li><a href="../../roadmap.html">roadmap</a></li>
+      <li><a href="../../pricing.html">pricing</a></li>
+      <li><a href="../../about.html">about</a></li>
+      <li><a href="../../contact.html">contact</a></li>
+      <li class="nav-cta"><a href="../../courses.html" class="btn btn-primary btn-sm">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../../index.html">Home</a><span class="sep">/</span><a href="../../courses.html">HTML</a><span class="sep">/</span><span class="here">Lesson 2</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-shell">
+
+    <aside class="lesson-sidebar">
+  <div class="ls-course">HTML course</div>
+  <nav>
+      <a href="lesson1.html" class="" data-lesson-id="html-1"><span class="file-ico">01</span>Your First HTML Page</a>
+      <a href="lesson2.html" class="active" data-lesson-id="html-2"><span class="file-ico">02</span>Text, Links &amp; Images</a>
+      <a href="lesson3.html" class="" data-lesson-id="html-3"><span class="file-ico">03</span>Lists, Tables &amp; Forms</a>
+    <div class="ls-divider"></div>
+    <a href="../../courses.html" class="ls-lessons-link">← All courses</a>
+  </nav>
+</aside>
+
+    <main class="lesson-content">
+      <div class="lesson-head">
+        <span class="eyebrow">HTML · Lesson 2 of 3</span>
+        <h1>Text, Links &amp; Images</h1>
+        <div class="lesson-meta-row">
+          <span class="m-item">⏱ 18 min</span>
+          <span class="m-item diff-beginner">● Beginner</span>
+        </div>
+        <div class="lesson-progress-wrap">
+          <div class="pw-label"><span>Course progress</span><span class="js-progress-text">0 / 3 lessons complete (0%)</span></div>
+          <div class="progress-track"><div class="progress-fill js-progress-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+  <button class="vp-btn">▶</button>
+  <span class="vp-caption">3:45 — Text, links and images</span>
+</div>
+
+<h2 id="intro">Introduction</h2>
+<p>A page of plain paragraphs is easy to write but hard to read. This lesson covers the elements that give text emphasis, connect pages together with links, and bring in images.</p>
+<h2 id="ch1">Chapter 1: Text Formatting</h2>
+<p>Use <code>&lt;strong&gt;</code> for text that is important and <code>&lt;em&gt;</code> for text that is emphasized. Both carry meaning, not just a visual style — screen readers announce them differently than plain text.</p>
+<div class="code-block">
+  <div class="cb-head"><span>text.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; this action &lt;em&gt;cannot&lt;/em&gt; be undone.&lt;/p&gt;
+&lt;p&gt;Line one.&lt;br&gt;Line two, right below it.&lt;/p&gt;</code></pre>
+</div>
+<div class="callout callout-note">
+  <div class="callout-title">Note</div>
+  <p><code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> also exist and look the same visually, but they carry no semantic meaning. Prefer <code>&lt;strong&gt;</code>/<code>&lt;em&gt;</code> unless you specifically need a stylistic bold or italic with no importance attached.</p>
+</div>
+<h2 id="ch2">Chapter 2: Links</h2>
+<p>The anchor element <code>&lt;a&gt;</code> creates a hyperlink. Its <code>href</code> attribute is the destination — another page, a section of the same page, an email address, or an external site.</p>
+<div class="code-block">
+  <div class="cb-head"><span>links.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;a href=&quot;https://developer.mozilla.org&quot;&gt;Visit MDN&lt;/a&gt;
+&lt;a href=&quot;about.html&quot;&gt;About this site&lt;/a&gt;
+&lt;a href=&quot;#quizBox&quot;&gt;Jump to the quiz&lt;/a&gt;
+&lt;a href=&quot;mailto:hello@example.com&quot;&gt;Email us&lt;/a&gt;</code></pre>
+</div>
+<p>Add <code>target="_blank"</code> to open a link in a new tab. When you do, also add <code>rel="noopener"</code> to prevent the new page from getting a reference back to your window.</p>
+<div class="code-block">
+  <div class="cb-head"><span>external.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;External site&lt;/a&gt;</code></pre>
+</div>
+<div class="callout callout-warning">
+  <div class="callout-title">Warning</div>
+  <p>Never use a bare URL as your only clue — write descriptive link text like "Read the pricing guide" instead of "click here", since screen reader users often browse a list of link text out of context.</p>
+</div>
+<h2 id="ch3">Chapter 3: Images</h2>
+<p>The <code>&lt;img&gt;</code> element embeds an image. It is a void element — it has no closing tag and no content, only attributes. <code>src</code> points to the file; <code>alt</code> describes it in words.</p>
+<div class="code-block">
+  <div class="cb-head"><span>images.html</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;img src=&quot;images/logo.png&quot; alt=&quot;CodeForge Academy logo&quot; width=&quot;120&quot;&gt;</code></pre>
+</div>
+<div class="callout callout-tip">
+  <div class="callout-title">Tip</div>
+  <p>The <code>alt</code> text is read aloud by screen readers and shown if the image fails to load. Describe what the image shows or means — never leave it blank unless the image is purely decorative (then use <code>alt=""</code>).</p>
+</div>
+<h2 id="demo">Try It Yourself</h2>
+<div class="live-demo" data-mode="html">
+  <div class="ld-head">Edit the markup to add a link and some emphasis, then click Run.</div>
+  <div class="ld-body">
+    <textarea spellcheck="false">&lt;p&gt;Turn this into a link: &lt;strong&gt;CodeForge Academy&lt;/strong&gt;&lt;/p&gt;</textarea>
+    <button class="btn btn-teal btn-sm ld-run">▶ Run Code</button>
+    <div class="ld-output"></div>
+  </div>
+</div>
+<h2 id="practice">Practice</h2>
+<div class="practice-box">
+  <span class="practice-tag">Exercise</span>
+  <h3>Practice Challenge</h3>
+  <p>Build a short bio block: one paragraph with a <code>&lt;strong&gt;</code> name, a link to a site you like, and an <code>&lt;img&gt;</code> with meaningful <code>alt</code> text.</p>
+  <details class="practice-answer">
+    <summary>See a sample solution</summary>
+    <div class="code-block">
+  <div class="cb-head"><span>solution</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>&lt;p&gt;&lt;strong&gt;Jane Developer&lt;/strong&gt; — learning to code.&lt;/p&gt;
+&lt;p&gt;Favorite resource: &lt;a href=&quot;https://developer.mozilla.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MDN Web Docs&lt;/a&gt;&lt;/p&gt;
+&lt;img src=&quot;images/avatar.png&quot; alt=&quot;Illustrated avatar of Jane at a laptop&quot;&gt;</code></pre>
+</div>
+  </details>
+</div>
+
+      <div class="quiz-box" id="quizBox">
+  <div class="quiz-body">
+    <div class="quiz-progress"></div>
+    <div class="quiz-questions"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline btn-sm quiz-prev">← Previous</button>
+      <button class="btn btn-teal btn-sm quiz-next">Next →</button>
+      <button class="btn btn-primary btn-sm quiz-submit">Submit Quiz</button>
+    </div>
+  </div>
+  <div class="quiz-result"></div>
+</div>
+<script>window.QUIZ_DATA = [{"q": "Which tag marks text as important, not just visually bold?", "options": ["<b>", "<strong>", "<i>", "<mark>"], "correct": 1, "explain": "<strong> carries semantic importance; <b> is purely visual."}, {"q": "Which attribute on <a> holds the destination URL?", "options": ["src", "link", "href", "to"], "correct": 2, "explain": "href (hypertext reference) holds the link destination."}, {"q": "What should accompany target=\"_blank\" for security?", "options": ["rel=\"noopener\"", "download", "alt=\"\"", "async"], "correct": 0, "explain": "rel=\"noopener\" stops the new tab from accessing the opening page via window.opener."}, {"q": "Which attribute makes an <img> accessible to screen readers?", "options": ["title", "alt", "caption", "label"], "correct": 1, "explain": "alt text is read aloud by screen readers and shown if the image fails to load."}, {"q": "Is <img> a void element (no closing tag)?", "options": ["Yes", "No, it needs </img>", "Only in HTML4", "Only with the src attribute"], "correct": 0, "explain": "<img> is self-closing/void \u2014 it never wraps content."}];</script>
+
+      <div class="mark-complete-row">
+        <button class="btn btn-primary" id="markCompleteBtn">Mark as Completed</button>
+        <span class="complete-note">Saved on this device — no account needed.</span>
+      </div>
+
+      <div class="lesson-footer-nav">
+  <a class="lfn-btn prev" href="lesson1.html"><span class="lfn-label">← Previous</span><span class="lfn-title">Your First HTML Page</span></a>
+  <a class="lfn-btn next" href="lesson3.html"><span class="lfn-label">Next →</span><span class="lfn-title">Lists, Tables &amp; Forms</span></a>
+</div>
+    </main>
+
+    <aside class="lesson-toc">
+      <div class="toc-box">
+    <h4>On this page</h4>
+    <nav>
+      <a href="#intro">Introduction</a>
+      <a href="#ch1">Chapter 1: Text Formatting</a>
+      <a href="#ch2">Chapter 2: Links</a>
+      <a href="#ch3">Chapter 3: Images</a>
+      <a href="#demo">Try It Yourself</a>
+      <a href="#practice">Practice</a>
+      <a href="#quizBox">Quiz</a>
+    </nav>
+  </div>
+      <div class="resources-box">
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a" target="_blank" rel="noopener">↗ MDN: Links</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank" rel="noopener">↗ MDN: Images</a></li>
+    </ul>
+    <button class="btn btn-outline btn-sm pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;"><span class="dots"><span></span><span></span><span></span></span> CodeForge</div>
+        <p class="tag">A project-based coding academy for people who'd rather build than binge lecture videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="../../courses.html">Courses</a>
+        <a href="../../roadmap.html">Roadmap</a>
+        <a href="../../pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="../../lessons/html/lesson1.html">HTML</a>
+        <a href="../../lessons/css/lesson1.html">CSS</a>
+        <a href="../../lessons/javascript/lesson1.html">JavaScript</a>
+        <a href="../../lessons/python/lesson1.html">Python</a>
+        <a href="../../lessons/php/lesson1.html">PHP</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CodeForge Academy. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.LESSON_ID = "html-2";
+  window.COURSE_ID = "html";
+  window.COURSE_LESSONS = ["html-1", "html-2", "html-3"];
+</script>
+<script src="../../js/script.js"></script>
+<script src="../../js/lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The DOM &amp; Events — JavaScript — CodeForge Academy</title>
+<meta name="description" content="Learn to select elements, update the page, and respond to events with vanilla JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../../index.html" class="brand">
+      <span class="dots"><span></span><span></span><span></span></span>
+      CodeForge <small>&nbsp;academy</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../../courses.html">courses</a></li>
+      <li><a href="../../roadmap.html">roadmap</a></li>
+      <li><a href="../../pricing.html">pricing</a></li>
+      <li><a href="../../about.html">about</a></li>
+      <li><a href="../../contact.html">contact</a></li>
+      <li class="nav-cta"><a href="../../courses.html" class="btn btn-primary btn-sm">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../../index.html">Home</a><span class="sep">/</span><a href="../../courses.html">JavaScript</a><span class="sep">/</span><span class="here">Lesson 2</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="lesson-shell">
+
+    <aside class="lesson-sidebar">
+  <div class="ls-course">JavaScript course</div>
+  <nav>
+      <a href="lesson1.html" class="" data-lesson-id="js-1"><span class="file-ico">01</span>Variables, Types &amp; Functions</a>
+      <a href="lesson2.html" class="active" data-lesson-id="js-2"><span class="file-ico">02</span>The DOM &amp; Events</a>
+    <div class="ls-divider"></div>
+    <a href="../../courses.html" class="ls-lessons-link">← All courses</a>
+  </nav>
+</aside>
+
+    <main class="lesson-content">
+      <div class="lesson-head">
+        <span class="eyebrow">JavaScript · Lesson 2 of 2</span>
+        <h1>The DOM &amp; Events</h1>
+        <div class="lesson-meta-row">
+          <span class="m-item">⏱ 26 min</span>
+          <span class="m-item diff-intermediate">● Intermediate</span>
+        </div>
+        <div class="lesson-progress-wrap">
+          <div class="pw-label"><span>Course progress</span><span class="js-progress-text">0 / 2 lessons complete (0%)</span></div>
+          <div class="progress-track"><div class="progress-fill js-progress-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <div class="video-placeholder">
+  <button class="vp-btn">▶</button>
+  <span class="vp-caption">6:05 — The DOM and events</span>
+</div>
+
+<h2 id="intro">Introduction</h2>
+<p>The DOM (Document Object Model) is the browser's live representation of your HTML — a tree of objects that JavaScript can read and change. This lesson covers selecting elements, changing them, and responding to events like clicks.</p>
+<h2 id="ch1">Chapter 1: Selecting Elements</h2>
+<p><code>document.querySelector()</code> finds the first element matching a CSS selector; <code>document.querySelectorAll()</code> finds all of them.</p>
+<div class="code-block">
+  <div class="cb-head"><span>select.js</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>const title = document.querySelector(&quot;h1&quot;);
+const allButtons = document.querySelectorAll(&quot;button&quot;);
+
+console.log(title.textContent);
+console.log(allButtons.length);</code></pre>
+</div>
+<h2 id="ch2">Chapter 2: Changing Content &amp; Style</h2>
+<p>Once you have an element, you can change its text with <code>textContent</code>, its markup with <code>innerHTML</code>, or its appearance directly via <code>.style</code> — though toggling a CSS class is usually cleaner.</p>
+<div class="code-block">
+  <div class="cb-head"><span>modify.js</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>const title = document.querySelector(&quot;h1&quot;);
+title.textContent = &quot;Welcome back!&quot;;
+title.style.color = &quot;#2E8B8B&quot;;
+
+document.querySelector(&quot;.card&quot;).classList.add(&quot;highlighted&quot;);</code></pre>
+</div>
+<div class="callout callout-warning">
+  <div class="callout-title">Warning</div>
+  <p>Only use <code>innerHTML</code> with content you trust. Inserting untrusted user input with <code>innerHTML</code> can let attackers run malicious scripts on your page.</p>
+</div>
+<h2 id="ch3">Chapter 3: Event Listeners</h2>
+<p><code>addEventListener</code> runs a function whenever something happens — a click, a keystroke, a form submission.</p>
+<div class="code-block">
+  <div class="cb-head"><span>events.js</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>const button = document.querySelector(&quot;#markCompleteBtn&quot;);
+
+button.addEventListener(&quot;click&quot;, function () {
+  console.log(&quot;Button was clicked!&quot;);
+  button.textContent = &quot;Done!&quot;;
+});</code></pre>
+</div>
+<div class="callout callout-tip">
+  <div class="callout-title">Tip</div>
+  <p>This exact pattern — <code>addEventListener("click", ...)</code> — is what powers the <strong>Mark as Completed</strong> button and the quiz on this very page.</p>
+</div>
+<h2 id="demo">Try It Yourself</h2>
+<div class="live-demo" data-mode="html">
+  <div class="ld-head">Click Run, then click the button in the output to see the event listener fire.</div>
+  <div class="ld-body">
+    <textarea spellcheck="false">&lt;style&gt;
+  button { padding: 10px 16px; }
+  .lit { background: #E8A33D; }
+&lt;/style&gt;
+&lt;button id=&quot;demoBtn&quot;&gt;Click me&lt;/button&gt;
+&lt;script&gt;
+  document.getElementById(&quot;demoBtn&quot;).addEventListener(&quot;click&quot;, function () {
+    this.classList.toggle(&quot;lit&quot;);
+    this.textContent = this.classList.contains(&quot;lit&quot;) ? &quot;Clicked!&quot; : &quot;Click me&quot;;
+  });
+&lt;/script&gt;</textarea>
+    <button class="btn btn-teal btn-sm ld-run">▶ Run Code</button>
+    <div class="ld-output"></div>
+  </div>
+</div>
+<h2 id="practice">Practice</h2>
+<div class="practice-box">
+  <span class="practice-tag">Exercise</span>
+  <h3>Practice Challenge</h3>
+  <p>Select a button with id <code>toggleBtn</code> and add a click listener that toggles a class named <code>active</code> on it.</p>
+  <details class="practice-answer">
+    <summary>See a sample solution</summary>
+    <div class="code-block">
+  <div class="cb-head"><span>solution</span><button class="cb-copy">Copy code</button></div>
+  <pre><code>const btn = document.getElementById(&quot;toggleBtn&quot;);
+btn.addEventListener(&quot;click&quot;, () =&gt; {
+  btn.classList.toggle(&quot;active&quot;);
+});</code></pre>
+</div>
+  </details>
+</div>
+
+      <div class="quiz-box" id="quizBox">
+  <div class="quiz-body">
+    <div class="quiz-progress"></div>
+    <div class="quiz-questions"></div>
+    <div class="quiz-nav">
+      <button class="btn btn-outline btn-sm quiz-prev">← Previous</button>
+      <button class="btn btn-teal btn-sm quiz-next">Next →</button>
+      <button class="btn btn-primary btn-sm quiz-submit">Submit Quiz</button>
+    </div>
+  </div>
+  <div class="quiz-result"></div>
+</div>
+<script>window.QUIZ_DATA = [{"q": "Which method selects the first matching element for a CSS selector?", "options": ["document.getElement()", "document.querySelector()", "document.find()", "document.select()"], "correct": 1, "explain": "querySelector() returns the first element matching the given CSS selector, or null."}, {"q": "Which property safely sets an element's visible text without parsing HTML?", "options": ["innerHTML", "textContent", "outerHTML", "value"], "correct": 1, "explain": "textContent sets plain text and is safe from HTML/script injection."}, {"q": "Which method attaches a function to run on a click?", "options": ["element.onClick = fn", "element.addEventListener(\"click\", fn)", "element.click(fn)", "element.bind(\"click\", fn)"], "correct": 1, "explain": "addEventListener is the standard, flexible way to attach event handlers."}, {"q": "What does classList.toggle(\"active\") do?", "options": ["Always adds the class", "Always removes the class", "Adds it if missing, removes it if present", "Renames the class"], "correct": 2, "explain": "toggle() flips the class's presence each time it's called."}, {"q": "Why is innerHTML risky with untrusted input?", "options": ["It's slower than textContent", "It can execute injected scripts", "It doesn't work in older browsers", "It only accepts numbers"], "correct": 1, "explain": "innerHTML parses and renders HTML, so untrusted input could include malicious <script> content."}];</script>
+
+      <div class="mark-complete-row">
+        <button class="btn btn-primary" id="markCompleteBtn">Mark as Completed</button>
+        <span class="complete-note">Saved on this device — no account needed.</span>
+      </div>
+
+      <div class="lesson-footer-nav">
+  <a class="lfn-btn prev" href="lesson1.html"><span class="lfn-label">← Previous</span><span class="lfn-title">Variables, Types &amp; Functions</span></a>
+  <a class="lfn-btn next" href="../../courses.html"><span class="lfn-label">Next →</span><span class="lfn-title">Back to all courses</span></a>
+</div>
+    </main>
+
+    <aside class="lesson-toc">
+      <div class="toc-box">
+    <h4>On this page</h4>
+    <nav>
+      <a href="#intro">Introduction</a>
+      <a href="#ch1">Chapter 1: Selecting Elements</a>
+      <a href="#ch2">Chapter 2: Changing Content & Style</a>
+      <a href="#ch3">Chapter 3: Event Listeners</a>
+      <a href="#demo">Try It Yourself</a>
+      <a href="#practice">Practice</a>
+      <a href="#quizBox">Quiz</a>
+    </nav>
+  </div>
+      <div class="resources-box">
+    <h4>Resources</h4>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener">↗ MDN: Introduction to the DOM</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">↗ MDN: addEventListener</a></li>
+    </ul>
+    <button class="btn btn-outline btn-sm pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;"><span class="dots"><span></span><span></span><span></span></span> CodeForge</div>
+        <p class="tag">A project-based coding academy for people who'd rather build than binge lecture videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="../../courses.html">Courses</a>
+        <a href="../../roadmap.html">Roadmap</a>
+        <a href="../../pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="../../lessons/html/lesson1.html">HTML</a>
+        <a href="../../lessons/css/lesson1.html">CSS</a>
+        <a href="../../lessons/javascript/lesson1.html">JavaScript</a>
+        <a href="../../lessons/python/lesson1.html">Python</a>
+        <a href="../../lessons/php/lesson1.html">PHP</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="../../about.html">About</a>
+        <a href="../../contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CodeForge Academy. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.LESSON_ID = "js-2";
+  window.COURSE_ID = "javascript";
+  window.COURSE_LESSONS = ["js-1", "js-2"];
+</script>
+<script src="../../js/script.js"></script>
+<script src="../../js/lesson.js"></script>
+</body>
+</html>

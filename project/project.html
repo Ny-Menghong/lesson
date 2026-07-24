@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeForge Academy — Learn to Code, One Commit at a Time</title>
+<meta name="description" content="CodeForge Academy teaches HTML, CSS, JavaScript, Python and PHP with hands-on lessons, quizzes and real projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+/* =========================================================
+   Course cards
+   ========================================================= */
+
+
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .grid-5,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.course-card .cc-top {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.cc-html {
+  background: #E8583D;
+}
+
+.cc-css {
+  background: #2E8B8B;
+}
+
+.cc-js {
+  background: #E8A33D;
+  color: #1B2430;
+}
+
+.cc-python {
+  background: #2f5f8a;
+}
+
+.cc-php {
+  background: #5a4a8a;
+}
+
+.course-card .cc-body {
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.course-card h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.course-card p.desc {
+  color: var(--ink-soft);
+  font-size: .88rem;
+  margin: 0;
+}
+
+.cc-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  color: var(--ink-soft);
+}
+
+.cc-rating {
+  color: var(--amber-dark);
+}
+
+.course-card .btn {
+  margin-top: auto;
+}
+
+    
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="dots"><span></span><span></span><span></span></span>
+      CodeForge <small>&nbsp;academy</small>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html" data-page="index.html">home</a></li>
+      <li><a href="../lessons/ai/lesson2.html" data-page="roadmap.html">lesson</a></li>
+      <li><a class="active" href="project.html" data-page="project.html">project</a></li>
+      <li><a href="about.html" data-page="about.html">about</a></li>
+      <li><a href="contact.html" data-page="contact.html">contact</a></li>
+      <li class="nav-cta"><a href="courses.html" class="btn btn-primary btn-sm">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">pick a path</span>
+      <h2>Five languages. One curriculum that fits together.</h2>
+      <p>Every course starts from zero and ends with something you built yourself.</p>
+    </div>
+    <div class="grid-5">
+        <div class="course-card">
+        <div class="">
+          <img src="https://res-console.cloudinary.com/dghjfba1c/thumbnails/v1/image/upload/v1784798446/U2NyZWVuc2hvdF8yMDI2LTA3LTIzX2F0XzQuMjAuMTBfaW5fdGhlX2FmdGVybm9vbl90ZDh4ZHA=/drilldown" alt="">
+        </div>
+        <div class="cc-body">
+          <h3>Website </h3>
+          <p class="desc">Make user can quilkly to search of fealter product with AI.</p>
+          <div class="cc-meta"><span>
+            <!-- 3 lessons -->
+             php + python
+          </span><span class="cc-rating">
+            <!-- ★ 4.9 -->
+             web
+          </span></div>
+          <a href="https://shopwithai.wuaze.com/" class="btn btn-teal btn-block btn-sm" target="_blank">View</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-top cc-html">&lt;/&gt;</div>
+        <div class="cc-body">
+          <h3>Face Detection</h3>
+          <p class="desc">Comming soon.</p>
+          <!-- <div class="cc-meta"><span>3 lessons</span><span class="cc-rating">★ 4.9</span></div> -->
+          <a href="lessons/ai/lesson2.html" class="btn btn-teal btn-block btn-sm">View</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-top cc-css">{ }</div>
+        <div class="cc-body">
+          <h3>CSS</h3>
+          <p class="desc">Layout, color and responsive design with Flexbox and Grid.</p>
+          <div class="cc-meta"><span>2 lessons</span><span class="cc-rating">★ 4.8</span></div>
+          <a href="lessons/css/lesson1.html" class="btn btn-teal btn-block btn-sm">Start Course</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-top cc-js">JS</div>
+        <div class="cc-body">
+          <h3>JavaScript</h3>
+          <p class="desc">Variables, functions and the DOM — make your pages interactive.</p>
+          <div class="cc-meta"><span>2 lessons</span><span class="cc-rating">★ 4.9</span></div>
+          <a href="lessons/javascript/lesson1.html" class="btn btn-teal btn-block btn-sm">Start Course</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-top cc-python">Py</div>
+        <div class="cc-body">
+          <h3>Python</h3>
+          <p class="desc">Clean, readable code for scripting, data and beyond.</p>
+          <div class="cc-meta"><span>1 lesson</span><span class="cc-rating">★ 4.9</span></div>
+          <a href="lessons/python/lesson1.html" class="btn btn-teal btn-block btn-sm">Start Course</a>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-top cc-php">Php</div>
+        <div class="cc-body">
+          <h3>PHP</h3>
+          <p class="desc">Server-side basics behind a huge share of the web.</p>
+          <div class="cc-meta"><span>1 lesson</span><span class="cc-rating">★ 4.7</span></div>
+          <a href="lessons/php/lesson1.html" class="btn btn-teal btn-block btn-sm">Start Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;"><span class="dots"><span></span><span></span><span></span></span> CodeForge</div>
+        <p class="tag">A project-based coding academy for people who'd rather build than binge lecture videos.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="courses.html">Courses</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="pricing.html">Pricing</a>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="lessons/html/lesson1.html">HTML</a>
+        <a href="lessons/css/lesson1.html">CSS</a>
+        <a href="lessons/javascript/lesson1.html">JavaScript</a>
+        <a href="lessons/python/lesson1.html">Python</a>
+        <a href="lessons/php/lesson1.html">PHP</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CodeForge Academy. All rights reserved.</span>
+      <span>Built with HTML, CSS &amp; vanilla JS — no frameworks.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
