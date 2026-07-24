@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeForge · About</title>
+  <!-- Google Fonts + your main stylesheet (linked externally as requested) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:opsz,wght@14..32,400;14..32,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- ===== main stylesheet: you will link it yourself ===== -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- extra micro-styles for about page (only if needed) -->
+  <style>
+    /* tiny additions that don't collide with main style */
+    .about-extra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 24px; }
+    .value-icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 28px; }
+    @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== navbar (editor-chrome) ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="brand">
+        <span class="dots">
+          <span></span><span></span><span></span>
+        </span>
+        CodeForge
+        <small>academy</small>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="menu">
+        <span style="font-size:1.4rem;">☰</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Dashboard</a>
+        <a href="#">Courses</a>
+        <a href="#" class="active">About</a>
+        <a href="#">Roadmap</a>
+        <div class="nav-cta">
+          <a href="#" class="btn btn-primary btn-sm">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== about hero / section ===== -->
+  <section class="hero" style="padding-top:48px; padding-bottom:24px;">
+    <div class="container">
+      <div>
+        <span class="eyebrow">⌘ about CodeForge</span>
+        <h1>Where code <span class="accent">meets craft</span></h1>
+        <p class="lead" style="max-width:50ch;">
+          We’re a tiny, obsessive team building the most thoughtful developer education
+          on the web. No fluff, no paywalls — just clear, practical knowledge.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Meet the team</a>
+          <a href="#" class="btn btn-outline">Our values</a>
+        </div>
+      </div>
+      <div>
+        <div class="editor-window" style="transform:rotate(0.6deg);">
+          <div class="editor-titlebar">
+            <span></span><span></span><span></span>
+            <em>about.md</em>
+          </div>
+          <div class="editor-body">
+            <span class="cm"># CodeForge · manifesto</span><br>
+            <span class="kw">const</span> <span class="fn">philosophy</span> = {<br>
+            &nbsp;&nbsp;<span class="attr">clarity</span>: <span class="str">'obsessive'</span>,<br>
+            &nbsp;&nbsp;<span class="attr">community</span>: <span class="str">'open'</span>,<br>
+            &nbsp;&nbsp;<span class="attr">craft</span>: <span class="str">'daily'</span><br>
+            };<br>
+            <span class="cm">// built with ♥, coffee, and 🐧</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== values / mission ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head left">
+        <span class="eyebrow">core values</span>
+        <h2>Built for builders</h2>
+        <p>Every decision we make starts with one question: <em>“does this help someone write better code?”</em></p>
+      </div>
+      <div class="about-extra-grid">
+        <div class="value-card">
+          <span class="value-icon">🧩</span>
+          <h4>No black boxes</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">Every concept is broken down to first principles. We never skip the hard part.</p>
+          <span class="badge-pill diff-beginner">beginner friendly</span>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">⚡</span>
+          <h4>Real projects</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">From dev tools to game engines — you build what matters, not todo lists.</p>
+          <span class="badge-pill diff-intermediate">intermediate</span>
+        </div>
+        <div class="value-card">
+          <span class="value-icon">🌱</span>
+          <h4>Always free</h4>
+          <p style="color:var(--ink-soft); font-size:.92rem;">Knowledge should be open. No paywalls, no limits — forever.</p>
+          <span class="badge-pill diff-advanced">community</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== team ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">humans behind the code</span>
+        <h2>Meet the forge</h2>
+        <p>We're a remote-first crew of engineers, designers, and educators.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar" style="background:#2E8B8B;">AL</div>
+          <h4>Ana Lopes</h4>
+          <p class="role">Founder · curriculum</p>
+          <span class="badge-pill" style="margin-top:6px;">ex-Google</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:#C9822A;">MR</div>
+          <h4>Marcus Reed</h4>
+          <p class="role">Lead engineer</p>
+          <span class="badge-pill" style="margin-top:6px;">Rust · TypeScript</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:#D9534F;">JC</div>
+          <h4>Jin Chen</h4>
+          <p class="role">UX &amp; pedagogy</p>
+          <span class="badge-pill" style="margin-top:6px;">design systems</span>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:#4CAF7D;">SM</div>
+          <h4>Samira M.</h4>
+          <p class="role">Community + ops</p>
+          <span class="badge-pill" style="margin-top:6px;">open source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== roadmap mini (about context) ===== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head left">
+        <span class="eyebrow">how we build</span>
+        <h2>Our process</h2>
+        <p>Every course goes through this forge before it reaches you.</p>
+      </div>
+      <div class="roadmap-track">
+        <div class="roadmap-step" data-step="1">
+          <h3>Discover</h3>
+          <p>We interview developers, analyze pain points, and find the signal in the noise.</p>
+          <div class="roadmap-tags"><span>research</span><span>interviews</span></div>
+        </div>
+        <div class="roadmap-step" data-step="2">
+          <h3>Prototype</h3>
+          <p>Draft lessons, code examples, and interactive challenges — then test them live.</p>
+          <div class="roadmap-tags"><span>alpha</span><span>feedback</span></div>
+        </div>
+        <div class="roadmap-step" data-step="3">
+          <h3>Polish</h3>
+          <p>Every sentence, every exercise, every diagram is refined until it sings.</p>
+          <div class="roadmap-tags"><span>editing</span><span>perfection</span></div>
+        </div>
+        <div class="roadmap-step" data-step="4">
+          <h3>Launch</h3>
+          <p>Open to the world, free forever — with a community around it.</p>
+          <div class="roadmap-tags"><span>open</span><span>community</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">curious?</span>
+        <h2>Frequently asked</h2>
+        <p>Short answers to the most common questions.</p>
+      </div>
+      <div style="max-width:760px; margin:0 auto;">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true">
+            <span>Is CodeForge really free?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a" style="max-height:120px;">
+            <p>Yes. Every course, every resource, every tool — 100% free. No credit card, no trial, no catch.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>What’s the difference between CodeForge and other platforms?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We focus on depth over breadth, projects over theory, and community over competition. And we never hide content behind paywalls.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can I contribute or suggest a course?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Absolutely! We’re open to guest instructors and community-driven topics. Drop us a line — we’d love to hear from you.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Which technologies do you cover?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>We focus on fundamentals (algorithms, architecture) and modern stacks: TypeScript, Rust, Go, Python, and systems design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:12px;">
+            <span class="dots"><span></span><span></span><span></span></span>
+            CodeForge
+          </div>
+          <p class="tag">Build the future, one line at a time.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <a href="#">Dashboard</a>
+          <a href="#">Courses</a>
+          <a href="#">Roadmap</a>
+          <a href="#">About</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Discord</a>
+          <a href="#">YouTube</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Code of conduct</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CodeForge Academy</span>
+        <span>⌨️ crafted with ☕ and 🐧</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JavaScript: mobile nav + FAQ accordion
+  ========================================================= -->
+  <script>
+    (function() {
+      // --- mobile nav toggle ---
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          links.classList.toggle('open');
+        });
+        // close on outside click (optional)
+        document.addEventListener('click', function(e) {
+          if (!links.contains(e.target) && !toggle.contains(e.target)) {
+            links.classList.remove('open');
+          }
+        });
+      }
+
+      // --- FAQ accordion ---
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-q');
+        const answer = item.querySelector('.faq-a');
+        if (!btn || !answer) return;
+
+        // if item has class 'open' initially, ensure max-height is set
+        if (item.classList.contains('open')) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+          answer.style.maxHeight = '0px';
+        }
+
+        btn.addEventListener('click', function() {
+          const isOpen = item.classList.contains('open');
+          // close others? (optional – we keep it independent)
+          // close all siblings
+          faqItems.forEach(other => {
+            if (other !== item && other.classList.contains('open')) {
+              other.classList.remove('open');
+              const otherAns = other.querySelector('.faq-a');
+              if (otherAns) otherAns.style.maxHeight = '0px';
+            }
+          });
+
+          if (isOpen) {
+            item.classList.remove('open');
+            answer.style.maxHeight = '0px';
+          } else {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>

@@ -372,7 +372,7 @@
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <ul class="nav-links">
       <li><a href="../../index.html" data-page="index.html">home</a></li>
-      <li><a href="lesson2.html" class="active"  data-page="roadmap.html">Lesson</a></li>
+      <li><a href="lesson1.html" class="active"  data-page="roadmap.html">Lesson</a></li>
       <li><a href="../../project/project.html" data-page="pricing.html">project</a></li>
       <li><a href="about.html" data-page="about.html">about</a></li>
       <li><a href="contact.html" data-page="contact.html">contact</a></li>
@@ -392,8 +392,9 @@
     <aside class="lesson-sidebar">
       <div class="ls-course">វគ្គ Basic AI</div>
       <nav>
-        <a href="lesson2.html" class="active" data-lesson-id="python-2"><span class="file-ico">01</span>សេចក្តីផ្តើម AI</a>
-        <a href="lesson2.html" data-lesson-id="python-2"><span class="file-ico">02</span>Yolo</a>
+        <a href="lesson1.html"  data-lesson-id="python-2"><span class="file-ico">01</span>សេចក្តីផ្តើម AI</a>
+        <a href="lesson2.html" class="active" data-lesson-id="python-2"><span class="file-ico">02</span>Yolo</a>
+        <a href="less4.html" data-lesson-id="python-2"><span class="file-ico">03</span>Make Model</a>
         <div class="ls-divider"></div>
         <a href="../../courses.html" class="ls-lessons-link">← វគ្គទាំងអស់</a>
       </nav>
@@ -401,230 +402,27 @@
     <main class="lesson-content">
       <p id="intro"></p>
       <div class="lesson-head">
-        <h1>សេចក្តីផ្តើមអំពី AI</h1>
+        <h1>សេចក្តីផ្តើមអំពី YOLO(You Only Look Once)</h1>
       </div>
 
       <div class="video-placeholder">
-        <img src="https://www.okoone.com/wp-content/uploads/2024/11/Marketing-Growth-207.jpg" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-DCwsqdPUxpS5zbm5OpD-NYIFPcPfmVdWwzSeu_5tKjrvyT0GLdiionY&s=10" alt="">
       </div>
 
       <!-- ====== WHAT IS AI ====== -->
-      <h2>តើ AI ជាអ្វី?</h2>
-      <p><strong>បញ្ញាសិប្បនិម្មិត (AI)</strong> ជាវិស័យនៃវិទ្យាសាស្ត្រកុំព្យូទ័រដែលផ្ដោតលើការបង្កើតម៉ានសុីននិងប្រព័ន្ធដែលអនុញ្ញាតឲ្យម៉ាស៊ីន អាចគិត រៀន និងសម្រេចចិត្ត។ វាជាវិស័យទូលំទូលាយរួមបញ្ចូលទាំងការយល់ដឹង ការវែកញែក ការដោះស្រាយបញ្ហា និងការយល់ភាសា។</p>
-      <p ><span class="note">និយាយសាមញ្ញ៖ </span> AI ធ្វើឲ្យកុំព្យូទ័រ <em>ឆ្លាត</em> — អាចធ្វើការងារដែលធម្មតាត្រូវការបញ្ញាមនុស្ស។
-        នៅពេលដែលម៉ាស៊ីនមានសមត្ថភាពដូចមនុស្ស ដូចជាការសិក្សា ការវែកញែកហេតុផល និងការដោះស្រាយបញ្ហា ត្រូវបានគេស្គាល់ថាជា បញ្ញាសិប្បនិម្មិត ។ ភាពប៉ិនប្រសប់នៃ AI គឺថាវាមិនចាំបាច់ឱ្យមនុស្សសរសេរច្បាប់ ឬជំហានលម្អិត (Program) សម្រាប់គ្រប់ស្ថានភាពទាំងអស់ដូចកម្មវិធីធម្មតាទេ។ ផ្ទុយទៅវិញ AI អាចរៀនពីទិន្នន័យ និងធ្វើការសម្រេចចិត្តដោយខ្លួនឯង។
-        ទោះជាយ៉ាងណាក៏ដោយ AI ក៏ត្រូវការមនុស្សសរសេរ Algorithm ដែរ ប៉ុន្តែ Algorithm នោះគឺសម្រាប់ បង្រៀន ឬឱ្យ AI រៀន មិនមែនសរសេរគ្រប់ជំហាននៃការដោះស្រាយបញ្ហាដូចកម្មវិធីធម្មតាទេ។
-      </p>
-      <div class="card-cate-ai">
-  <!-- the exact requested grid, with extra semantics -->
-  <div class="puzzle-grid" role="img" aria-label="Visual equation: first image plus second image equals third image">
-    <!-- image 1 -->
-    <div class="grid-cell" >
-      <p>Artificial</p>
-      <img class="puzzle-img" 
-           src="https://i.pinimg.com/1200x/77/ff/dc/77ffdcdbe44f5ee9d537ab5b9880a0f9.jpg" 
-           alt="First image: soft aesthetic scene" 
-           loading="lazy" 
-           decoding="async" />
-      <p>Hardware និង Software ដែលបង្កើតឡើងដោយមនុស្ស</p>
-
-    </div>
-    <!-- plus sign -->
-    <div class="grid-cell">
-      <span class="operator" aria-hidden="true">+</span>
-    </div>
-    <!-- image 2 -->
-    <div class="grid-cell">
-      <p>Intelligence</p>
-      <img class="puzzle-img" 
-           src="https://i.pinimg.com/736x/f7/68/74/f76874de3211ff59f340d381dabf37f5.jpg" 
-           alt="Second image: dreamy composition" 
-           loading="lazy" 
-           decoding="async" />
-      <p>Software ដែលផ្ដល់សម្ថភាពឲ្យ​ AI វិភាគនិងសម្រេចចិត្ត</p>
-    </div>
-
-    <!-- equal sign -->
-    <div class="grid-cell">
-      <span class="operator operator-equal" aria-hidden="true">=</span>
-    </div>
-
-    <!-- image 3 (result) -->
-    <div class="grid-cell">
-      <p>AI</p>
-      <img class="puzzle-img" 
-           src="https://i.pinimg.com/736x/74/65/eb/7465eb1f533a85540bdeb07b2ed2ce8b.jpg" 
-           alt="Third image: result, harmonious blend" 
-           loading="lazy" 
-           decoding="async" />
-           <p>បច្ចេកវិទ្យាដែលមានសម្ថភាពដូចជាមនុស្ស</p>
-           
-    </div>
-  </div>
-</div>
-
+      <h2>តើ Yolo ជាអ្វី?</h2>
+      <p><strong>Yolo </strong> YOLO គឺជា Model សម្រាប់រកវត្ថុ (Object Detection) ដែលអាចមើលរូបភាពតែមួយដងប៉ុណ្ណោះ ហើយអាចទាយបានទាំងទីតាំង (Location) និងប្រភេទវត្ថុ (Class) ក្នុងពេលតែមួយ។ 
+        វាធ្វើឲ្យប្រព័ន្ធមានល្បឿនលឿនខ្លាំង និងអាចប្រើបានក្នុងការងារពេលវេលាពិត (Real-time) ដូចជា Camera, Self-driving car និង AI Surveillance។</p>
+    
       <!-- ====== IMAGE / TREE ====== -->
-      
-
       <!-- ====== HISTORY ====== -->
-      <h2 id="history">ប្រវត្តិ AI</h2>
+      <h2 id="how_work">How yolo work</h2>
+      <div>
+        <img src="https://es.mathworks.com/help/vision/ug/yolox_gs_small.png" alt="">
+      </div>
 
-          <ul>
-            <li>
-                <p>
-                  មុនពេលមានកុំព្យូទ័រ គំនិតអំពី "ជីវិតសិប្បនិម្មិត" បានលេចឡើងក្នុងទេវកថា និងទស្សនវិជ្ជា។
-                  <hr>
-                  ទស្សនវិជ្ជា៖ អ្នកគិតដូចជា អារីស្តូត បានចាប់ផ្តើមពិភាក្សាអំពីតក្កវិជ្ជា ដែលជាមូលដ្ឋានគ្រឹះនៃការសន្និដ្ឋានដោយស្វ័យប្រវត្តិ។
-                  <hr>
-                  គណិតវិទ្យា៖ ការអភិវឌ្ឍទ្រឹស្តីប្រូបាប៊ីលីតេ និងតក្កវិជ្ជាគណិតវិទ្យា បានបង្កើតភាសាសម្រាប់ពណ៌នាអំពីដំណើរការគិត។
-                  <hr>
-                </p>
-              
-            </li>
-            <li>
-              <strong class="note">១៩៤៣ : </strong> 
-                លោក Warren McCulloch និង Walter Pitts បានបង្កើតគំរូគណិតវិទ្យានៃណឺរ៉ូន (Neural Network ដំបូងគេ)។ វាជាគំរូគណិតវិទ្យាដែលត្រាប់តាមការងាររបស់កោសិកាប្រសាទ (Neuron) ក្នុងខួរក្បាលមនុស្ស។
-            </li>
-            <li>
-              <strong class="note">១៩៥០ : </strong> 
-                លោក Alan Turing បានស្នើ "ការធ្វើតេស្ត Turing" ដើម្បីវាស់សមត្ថភាពរបស់ម៉ាស៊ីនក្នុងការបង្ហាញភាពវៃឆ្លាតដូចមនុស្ស។គាត់បានសួរសំណួរថា៖"Can Machines Think?" (តើម៉ាស៊ីនអាចគិតបានទេ?)
-            </li>
-            <li>
-              <strong class="note">១៩៥៦:</strong> 
-              សន្និសីទ Dartmouth ត្រូវបានចាត់ទុកថាជាព្រឹត្តិការណ៍កំណើតនៃ AI ជាផ្នែកសិក្សា ដែលមានអ្នកត្រួសត្រាយដូចជា John McCarthy, Marvin Minsky ជាដើម។AI ក្លាយជាវិស័យស្រាវជ្រាវដាច់ដោយឡែក។
-              
-              
-            <li>
-              <strong class="note">1956–1974 :</strong> 
-              អ្នកស្រាវជ្រាវជឿថា ម៉ាស៊ីនដែលមានភាពវៃឆ្លាតស្មើមនុស្សអាចនឹងត្រូវបង្កើតក្នុងរយៈពេលតែប៉ុន្មានទសវត្សរ៍ប៉ុណ្ណោះ។
-              <a class="note-link" href="">Logic Theorist និង General Problem Solver</a> 
-              <a class="note-link" href="">
-                Perceptron (1957)
-              </a>
-              <a class="note-link" href="">ELIZA (1966) ជា Chatbot ដំបូង</a>
-              <a class="note-link" href="">Shakey the Robot (1966–1972)</a>
-               ត្រូវបានបង្កើតឡើង ។
-            </li>
-            <li>
-              <strong class="note">AI Winter (1974–1980) : </strong> 
-                នៅពេលដែលការសន្យាមិនត្រូវបានសម្រេច មូលនិធិស្រាវជ្រាវបានថយចុះយ៉ាងខ្លាំង។
-                ដែនកំណត់៖ កុំព្យូទ័រសម័យនោះមានថាមពលតិច និងមានតម្លៃថ្លៃ មិនអាចទ្រទ្រង់ក្បួនដោះស្រាយស្មុគស្មាញបានទេ។
-                ការផ្លាស់ប្តូរវិធីសាស្រ្ត៖ អ្នកស្រាវជ្រាវបានប្តូរពីការបង្កើត AI ទូទៅ មកផ្តោតលើ "ប្រព័ន្ធអ្នកជំនាញ" (Expert Systems) 
-                ដែលផ្តោតលើចំណេះដឹងក្នុងវិស័យចង្អៀតជាក់លាក់។
-            </li>
-            <li>
-              <strong class="note">1980–1987 : </strong> 
-                Expert System បានកើតឡើងគឺជា ជាដំណាក់កាលដ៏សំខាន់មួយក្នុងប្រវត្តិសាស្ត្រ AI។ វាបានបង្ហាញថា កុំព្យូទ័រអាចប្រើ ចំណេះដឹងរបស់អ្នកជំនាញ និង ច្បាប់ IF–THEN ដើម្បីជួយសម្រេចចិត្តក្នុងវិស័យជាក់លាក់ ដូចជាវេជ្ជសាស្ត្រ ធនាគារ និងឧស្សាហកម្ម។
-            </li>
-            <li>
-              <strong class="note">1987–1993 : </strong> 
-                AI Winter លើកទី២ (1987–1993) គឺជាដំណាក់កាលដែលវិស័យ AI ជួបការធ្លាក់ចុះដោយសារការបរាជ័យ និងដែនកំណត់របស់ Expert Systems។
-            </li>
-            <li>
-              <strong class="note">1997 : Machine Learning Era</strong> 
-                គឺជាចំណុចផ្លាស់ប្តូរដ៏សំខាន់ក្នុងប្រវត្តិសាស្ត្រ AI។ ជំនួសឱ្យការសរសេរ Rules ដោយដៃ ដូចក្នុង Expert Systems កុំព្យូទ័របានចាប់ផ្តើម រៀនពីទិន្នន័យ (Data) ដើម្បីរកលំនាំ និងធ្វើការព្យាករណ៍។ 
-                Deep Blue បានយកឈ្នះម្ចាស់ជើងឯកអុកពិភពលោក ( <a class="note-link" href="">Garry Kasparov</a> )
-                ការផ្លាស់ប្តូរនេះបានបង្កើតមូលដ្ឋានសម្រាប់ Deep Learning (2012) និង Generative AI ដែលយើងប្រើប្រាស់សព្វថ្ងៃ។
-            </li>
-            <li>
-              <strong class="note">2012 : Deep Learning Revolution</strong> 
-                ឆ្នាំនោះ គំរូ <a class="note-link" href="">AlexNet</a>  បានឈ្នះការប្រកួត ImageNet Large Scale Visual Recognition Challenge (ILSVRC) ដោយកាត់បន្ថយអត្រាកំហុសយ៉ាងច្រើន បើប្រៀបធៀបនឹងវិធីសាស្ត្រមុនៗ។ ព្រឹត្តិការណ៍នេះបានបង្ហាញថា Deep Neural Networks អាចដោះស្រាយបញ្ហាស្មុគស្មាញបានយ៉ាងមានប្រសិទ្ធភាព។
-            </li>
-            <li>
-              <strong class="note">2017 : Transformer Revolution</strong> 
-                ឆ្នាំ 2017 អ្នកស្រាវជ្រាវនៅ Google បានបោះពុម្ពស្រាវជ្រាវដ៏ល្បីមួយមានចំណងជើង "Attention Is All You Need"។
-                ការស្រាវជ្រាវនេះបានណែនាំស្ថាបត្យកម្មថ្មីឈ្មោះ Transformer ដែលបានផ្លាស់ប្តូរវិស័យ Natural Language Processing (NLP) 
-                និងក្លាយជាមូលដ្ឋានសម្រាប់ Large Language Models (LLMs)។
-            </li>
-            <li>
-              <strong class="note">2022–បច្ចុប្បន្ន : Generative AI</strong> 
-                Generative AI គឺជា AI ដែលអាច បង្កើតមាតិកាថ្មី (Generate New Content) ដោយផ្អែកលើ Prompt ឬសំណើរបស់អ្នកប្រើ។
-                មិនដូច AI ជំនាន់មុនដែលគ្រាន់តែ ចាត់ថ្នាក់ (Classification) ឬ ព្យាករណ៍ (Prediction) ទេ Generative AI អាចបង្កើតអ្វីថ្មីបាន។
-            </li>
-            <li>
-              <div class="callout callout-note">
-                  <code>បញ្ញាសិប្បនិម្មិត បានធ្វើឱ្យមានភាពភ្ញាក់ផ្អើលយ៉ាងខ្លាំង វានាំ ឱ្យមានការជឿនលឿន ផ្នែកបច្ចេកវិទ្យាផ្សេងៗ ដូចជា ការអភិវឌ្ឍន៍ភាសាសរសេរកម្មវិធី (Programming Languages) និងប្រព័ន្ធមនុស្សយន្ត (Robotic systems)។ 
-                  </code>
-              </div>
-            </li>
-          </ul>
 
-      <!-- ====== KEY FUNCTIONS ====== -->
-      <h2 id="key-functions">មុខងារសំខាន់របស់ AI</h2>
-      <p>ប្រព័ន្ធ AI ជាធម្មតាអនុវត្តមុខងារទាំងនេះ៖</p>
-      <div class="value-card">
-        <span class="num">01</span>
-        <h3>ការរៀនពីទិន្នន័យ (Learning)</h3>
-        <p>
-          មុខងារសំខាន់បំផុតរបស់ AI គឺការរៀនពីទិន្នន័យ (Data Learning)។ AI ប្រើទិន្នន័យចាស់ៗដើម្បីស្វែងរកលំនាំ (patterns) ហើយបង្កើតចំណេះដឹងថ្មី។ ឧទាហរណ៍៖ ប្រព័ន្ធ AI អាចរៀនស្គាល់មុខមនុស្សពីរូបថតរាប់ពាន់សន្លឹក ឬទស្សន៍ទាយថាអតិថិជននឹងទិញផលិតផលណាមួយ។
-          -Machine Learning និង Deep Learning និង​​​ Reinforcement Learning គឺជាវិធីសាស្រ្តសំខាន់ៗសម្រាប់ការរៀនពីទិន្នន័យ។
-        </p>
-      </div>
-            <div class="value-card">
-        <span class="num">02</span>
-        <h3>ការពិចារណា និងសម្រេចចិត្ត (Reasoning & Decision Making)</h3>
-        <p>
-         AI អាចវិភាគព័ត៌មាន ហើយសម្រេចចិត្តដោយ Algorithm ដែលបានកំណត់ទុកនិង​ Model​ ដែលបានរៀបចំទិន្នន័យ។ ឧទាហរណ៍៖ ប្រព័ន្ធធនាគារអាចសម្រេចថា តើប្រតិបត្តិការណាមួយមានហានិភ័យឬអត់។ AI ក្នុងរថយន្តស្វ័យប្រវត្តិអាចសម្រេចថាត្រូវបត់ ឈប់ ឬបន្តដំណើរ។
-- Logical Reasoning, Probabilistic Reasoning និង Decision Trees គឺជាវិធីសាស្រ្តសំខាន់ៗសម្រាប់ការពិចារណា និងសម្រេចចិត្ត។
-        </p>
-      </div>
-            <div class="value-card">
-        <span class="num">03</span>
-        <h3>ការវិភាគ (Analysis)</h3>
-        <p>
-          AI អាចវិភាគទិន្នន័យដើម្បីរកលំនាំ និងទស្សន៍ទាយលទ្ធផល។ វាត្រូវបានប្រើក្នុងការវិភាគអតិថិជន ទស្សន៍ទាយទីផ្សារ និងស្វែងរកការប្រព្រឹត្តបទល្មើស។ ឧទាហរណ៍៖ ប្រព័ន្ធ AI អាចវិភាគទិន្នន័យអតិថិជនដើម្បីផ្តល់អនុសាសន៍ផលិតផលឬសេវាកម្មដែលពួកគេចូលចិត្ត។ - Natural Language Processing (NLP) និង Computer Vision គឺជាវិធីសាស្រ្តសំខាន់ៗសម្រាប់ការវិភាគទិន្នន័យ
-        </p>
-      </div>
-            <div class="value-card">
-        <span class="num">04</span>
-        <h3>ការអនុវត្តសកម្មភាព (Action & Automation)</h3>
-        <p>
-         AI អាចធ្វើសកម្មភាពដោយស្វ័យប្រវត្តិ ដោយគ្មានការគ្រប់គ្រងពីមនុស្សដោយផ្អែកលើលទ្ធផលដែលបានពី Learning,Reasesioning,Analysis។ ឧទាហរណ៍៖ Robot នៅរោងចក្រ, Self-driving car, និងប្រព័ន្ធណែនាំក្នុងអ៊ីនធឺណិតដែលធ្វើការដោយស្វ័យប្រវត្តិ។
-        </p>
-      </div>
-      <div class="callout callout-note">
-        <div class="callout-title">សរុប</div>
-        <p>មុខងារសំខាន់ៗរបស់ AI រួមមាន ការរៀនពីទិន្នន័យ(Learning) + ការពិចារណា(Reasesioning) + ការវិភាគ(Analysing) + និងការអនុវត្តសកម្មភាព។ មុខងារទាំងនេះធ្វើឲ្យ AI ក្លាយជាបច្ចេកវិទ្យាដ៏សំខាន់ក្នុងសម័យឌីជីថល និងជួយបង្កើនប្រសិទ្ធភាពក្នុងជីវិតប្រចាំថ្ងៃ។</p>
-      </div>
       
-      <!-- ====== ADVANTAGES & DISADVANTAGES ====== -->
-      <h2 id="advantages">គុណសម្បត្តិរបស់ AI គុណវិបត្តិរបស់ AI</h2>
-      <div class="callout callout-note" style="display: grid;grid-template-columns: repeat(2,1fr);gap: 10px;">
-        <div>
-          <h2 >គុណសម្បត្តិរបស់ AI </h2>
-          <ul>
-            <li><strong>ប្រសិទ្ធភាព &amp; ល្បឿន:</strong> AI អាចដំណើរការទិន្នន័យច្រើនក្នុងរយៈពេលវិនាទី។</li>
-            <li><strong>ភាពត្រឹមត្រូវ:</strong> កាត់បន្ថយកំហុសមនុស្សក្នុងការងារដដែលៗ។</li>
-            <li><strong>មានជានិច្ច:</strong> AI អាចដំណើរការ ២៤/៧ ដោយមិនចេះនឿយ។</li>
-            <li><strong>អាចពង្រីកបាន:</strong> គ្រប់គ្រងបន្ទុកការងារលើសសមត្ថភាពមនុស្ស។</li>
-            <li><strong>ការច្នៃប្រឌិត:</strong> ជំរុញការរកឃើញក្នុងវេជ្ជសាស្ត្រ វិទ្យាសាស្ត្រ និងវិស្វកម្ម។</li>
-          </ul>
-        </div>
-        <div class="callout callout-note">
-          <h2 >គុណវិបត្តិរបស់ AI</h2>
-          <ul>
-              <li><strong>តម្លៃខ្ពស់:</strong> ការអភិវឌ្ឍន៍ និងថែទាំ AI ថ្លៃណាស់។</li>
-              <li><strong>ការបាត់បង់ការងារ:</strong> ស្វ័យប្រវត្តិកម្មអាចជំនួសតួនាទីមនុស្ស។</li>
-              <li><strong>ការលំអៀង (Bias):</strong> AI អាចទទួលមរតក និងពង្រីកភាពលំអៀងក្នុងទិន្នន័យបណ្តុះបណ្តាល។</li>
-              <li><strong>ខ្វះតម្លាភាព:</strong> ម៉ូដែល Deep Learning ច្រើនតែជា "ប្រអប់ខ្មៅ"។</li>
-              <li><strong>សន្តិសុខ &amp; ការប្រើប្រាស់ខុស:</strong> AI អាចត្រូវបានប្រើសម្រាប់ deepfakes, ការឃ្លាំមើល។</li>
-          </ul>
-        </div>
-
-      </div>
-      
-
-      <!-- ====== HOW AI WORKS ====== -->
-      <h2 id="how-ai-works">របៀប AI ដំណើរការ (សង្ខេប)</h2>
-      <p>ប្រព័ន្ធ AI ភាគច្រើនដើរតាមជំហានទាំងនេះ៖</p>
-      <ol>
-        <li><strong>ប្រមូលទិន្នន័យ:</strong> ប្រមូលទិន្នន័យពាក់ព័ន្ធ (អត្ថបទ, រូបភាព, លេខ)។</li>
-        <li><strong>កែទម្រង់:</strong> សម្អាត ធ្វើឲ្យមានស្តង់ដារ។</li>
-        <li><strong>ទាញយកលក្ខណៈពិសេស:</strong> កំណត់អត្តសញ្ញាណគំរូសំខាន់ៗ។</li>
-        <li><strong>បណ្តុះបណ្តាលម៉ូដែល:</strong> ប្រើក្បួនដោះស្រាយ (ឧ. neural networks) ដើម្បីរៀនពីទិន្នន័យ។</li>
-        <li><strong>វាយតម្លៃ:</strong> សាកល្បងដំណើរការម៉ូដែលលើទិន្នន័យដែលមិនធ្លាប់ឃើញ។</li>
-        <li><strong>ដាក់ដំណើរការ:</strong> ប្រើម៉ូដែលដើម្បីធ្វើការទស្សន៍ទាយ ឬសម្រេចចិត្ត។</li>
-      </ol>
       <div class="mark-complete-row">
         <button class="btn btn-primary" id="markCompleteBtn">សម្គាល់ថាបានបញ្ចប់</button>
         <span class="complete-note">រក្សាទុកលើឧបករណ៍នេះ — មិនត្រូវការគណនី។</span>
@@ -640,14 +438,8 @@
       <div class="toc-box">
         <h4>មាតិកា</h4>
         <nav>
-          <a href="#intro">តើ AI ជាអ្វី?</a>
-          <a href="#history">ប្រវត្តិ</a>
-          <a href="#key-functions">មុខងារ</a>
-          <a href="#advantages">គុណសម្បត្តិ</a>
-          <a href="#disadvantages">គុណវិបត្តិ</a>
-          <a href="#how-ai-works">របៀបដំណើរការ</a>
-          <a href="#practice">អនុវត្ត</a>
-          <a href="#quizBox">សំណួរ</a>
+          <a href="#intro">តើ Yolo ជាអ្វី?</a>
+          <a href="#how_work">How it work</a>
         </nav>
       </div>
       <div class="resources-box">
@@ -697,46 +489,6 @@
   </div>
 </footer>
 
-<script>
-  // Simulation
-  const slider = document.getElementById('xSlider');
-  const xVal = document.getElementById('xVal');
-  const predDisplay = document.getElementById('predictionDisplay');
-  const bars = document.querySelectorAll('.bar');
-
-  function updateSim() {
-    const x = parseFloat(slider.value);
-    const y = 2 * x + 1;  // simple linear model
-    xVal.textContent = x.toFixed(1);
-    predDisplay.textContent = y.toFixed(2);
-    // color based on value
-    if (y < 5) {
-      predDisplay.className = 'result low';
-    } else if (y > 15) {
-      predDisplay.className = 'result high';
-    } else {
-      predDisplay.className = 'result';
-    }
-    // update bars (static demo, just for visual)
-    // we animate bars proportionally to y (capped at 100)
-    const maxY = 21; // 2*10+1
-    const pct = Math.min(y / maxY, 1) * 90 + 10;
-    // apply to all bars with slight variation (just for demo)
-    const base = pct;
-    bars.forEach((bar, idx) => {
-      const offset = (idx - 2) * 8;
-      let h = Math.min(Math.max(base + offset, 10), 100);
-      bar.style.height = h + 'px';
-    });
-  }
-
-  slider.addEventListener('input', updateSim);
-  updateSim();
-
-  window.LESSON_ID = "python-2";
-  window.COURSE_ID = "python";
-  window.COURSE_LESSONS = ["python-1", "python-2"];
-</script>
 <script src="../../js/script.js"></script>
 <script src="../../js/lesson.js"></script>
 </body>

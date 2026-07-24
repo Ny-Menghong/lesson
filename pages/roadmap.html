@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engineer · Roadmap · CodeForge</title>
+  <!-- Google Fonts + your main stylesheet (linked externally) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:opsz,wght@14..32,400;14..32,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- ===== main stylesheet: you link it yourself ===== -->
+   <link rel="stylesheet" href="../css/style.css">
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <style>
+    /* ----- additional animations / polish for roadmap ----- */
+    .roadmap-track {
+      position: relative;
+      padding-left: 44px;
+    }
+
+    .roadmap-track::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 6px;
+      bottom: 6px;
+      width: 3px;
+      background: var(--line, #DDD8CC);
+      border-radius: 6px;
+    }
+
+    .roadmap-step {
+      position: relative;
+      padding-bottom: 48px;
+      opacity: 0;
+      transform: translateX(-12px);
+      animation: stepFadeIn 0.5s ease forwards;
+    }
+
+    .roadmap-step:nth-child(1) { animation-delay: 0.1s; }
+    .roadmap-step:nth-child(2) { animation-delay: 0.25s; }
+    .roadmap-step:nth-child(3) { animation-delay: 0.4s; }
+    .roadmap-step:nth-child(4) { animation-delay: 0.55s; }
+    .roadmap-step:nth-child(5) { animation-delay: 0.7s; }
+    .roadmap-step:nth-child(6) { animation-delay: 0.85s; }
+    .roadmap-step:nth-child(7) { animation-delay: 1.0s; }
+
+    @keyframes stepFadeIn {
+      0% { opacity: 0; transform: translateX(-16px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .roadmap-step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: -44px;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--ink, #1B2430);
+      color: var(--amber, #E8A33D);
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: .78rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--paper, #F7F5F0);
+      box-shadow: 0 0 0 2px var(--teal, #2E8B8B);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 2;
+    }
+
+    .roadmap-step:hover::before {
+      transform: scale(1.12);
+      box-shadow: 0 0 0 4px var(--amber, #E8A33D);
+    }
+
+    .roadmap-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .roadmap-step .step-content {
+      background: var(--paper, #F7F5F0);
+      border-radius: 12px;
+      padding: 18px 22px 20px;
+      border: 1px solid var(--line, #DDD8CC);
+      box-shadow: 0 2px 8px rgba(27,36,48,0.05);
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
+    }
+
+    .roadmap-step .step-content:hover {
+      box-shadow: 0 8px 24px rgba(27,36,48,0.08);
+      transform: translateY(-2px);
+    }
+
+    .roadmap-step h3 {
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .roadmap-step h3 .badge-pill {
+      font-size: .68rem;
+      background: var(--paper-dim, #EDEAE2);
+      border: 1px solid var(--line, #DDD8CC);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+      color: var(--ink-soft, #3A4557);
+    }
+
+    .roadmap-step p {
+      color: var(--ink-soft, #3A4557);
+      margin-bottom: 12px;
+      font-size: .95rem;
+    }
+
+    .roadmap-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .roadmap-tags span {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: .72rem;
+      background: var(--paper-dim, #EDEAE2);
+      border: 1px solid var(--line, #DDD8CC);
+      padding: 4px 10px;
+      border-radius: 20px;
+      color: var(--ink-soft, #3A4557);
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .roadmap-tags span:hover {
+      background: var(--teal, #2E8B8B);
+      color: white;
+      border-color: var(--teal, #2E8B8B);
+    }
+
+    /* progress mini bar inside each step */
+    .step-progress {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .step-progress .progress-track {
+      flex: 1;
+      height: 6px;
+      background: var(--paper-dim, #EDEAE2);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line, #DDD8CC);
+    }
+
+    .step-progress .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal, #2E8B8B), var(--green, #4CAF7D));
+      border-radius: 12px;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .step-progress .pct {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: .72rem;
+      color: var(--ink-soft, #3A4557);
+      min-width: 32px;
+      text-align: right;
+    }
+
+    /* pulse animation for live indicator */
+    .live-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--green, #4CAF7D);
+      border-radius: 50%;
+      margin-right: 6px;
+      animation: pulse-dot 1.6s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.3; transform: scale(0.9); }
+    }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      .roadmap-track { padding-left: 34px; }
+      .roadmap-step::before {
+        left: -34px;
+        width: 26px;
+        height: 26px;
+        font-size: .7rem;
+      }
+      .roadmap-step .step-content { padding: 14px 16px; }
+    }
+
+    /* extra style for the hero micro-section */
+    .hero-ai {
+      background: var(--ink, #1B2430);
+      color: var(--paper, #F7F5F0);
+      padding: 40px 0 32px;
+      border-radius: 16px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-lg, 0 8px 28px rgba(27,36,48,0.14));
+    }
+    .hero-ai h1 { color: var(--paper, #F7F5F0); }
+    .hero-ai p { color: #C7CCD6; }
+    .hero-ai .accent { color: var(--amber, #E8A33D); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== navbar (same as main) ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="brand">
+        <span class="dots"><span></span><span></span><span></span></span>
+        CodeForge
+        <small>academy</small>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="menu">
+        <span style="font-size:1.4rem;">☰</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Dashboard</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+        <a href="#" class="active">Roadmap</a>
+        <div class="nav-cta">
+          <a href="#" class="btn btn-primary btn-sm">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== ROADMAP: AI Engineer ===== -->
+  <section class="section" style="padding-top: 32px;">
+    <div class="container">
+      <!-- hero / header with animation friendly -->
+      <div class="hero-ai" style="padding: 32px 28px; text-align: center;">
+        <span class="eyebrow" style="color: var(--amber);">🧠 specialization track</span>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 6px;">
+          AI Engineer <span class="accent">roadmap</span>
+        </h1>
+        <p style="max-width: 600px; margin: 8px auto 0; font-size: 1.05rem;">
+          From math foundations to production-grade ML · <span class="live-dot"></span> updated weekly
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 18px;">
+          <span class="badge-pill" style="background: var(--teal); color: white; border: none;">beginner → advanced</span>
+          <span class="badge-pill" style="background: var(--amber); color: var(--ink); border: none;">20+ projects</span>
+          <span class="badge-pill" style="background: var(--ink-soft); color: var(--paper); border: none;">community driven</span>
+        </div>
+      </div>
+
+      <!-- ===== roadmap timeline with animation ===== -->
+      <div class="roadmap-track">
+
+        <!-- step 1 -->
+        <div class="roadmap-step" data-step="1">
+          <div class="step-content">
+            <h3>
+              <span>🧮 Linear algebra &amp; calculus</span>
+              <span class="badge-pill">foundation</span>
+            </h3>
+            <p>Vectors, matrices, gradients, and derivatives — the language of AI. We build intuition with visual notebooks.</p>
+            <div class="roadmap-tags">
+              <span>numpy</span><span>linear algebra</span><span>differentiation</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 100%;"></div></div>
+              <span class="pct">100%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 2 -->
+        <div class="roadmap-step" data-step="2">
+          <div class="step-content">
+            <h3>
+              <span>📊 Probability &amp; statistics</span>
+              <span class="badge-pill">core</span>
+            </h3>
+            <p>Distributions, Bayes, MLE — everything you need to reason about uncertainty in models.</p>
+            <div class="roadmap-tags">
+              <span>bayes</span><span>MLE</span><span>hypothesis testing</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 80%;"></div></div>
+              <span class="pct">80%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 3 -->
+        <div class="roadmap-step" data-step="3">
+          <div class="step-content">
+            <h3>
+              <span>🐍 Python for AI</span>
+              <span class="badge-pill">intermediate</span>
+            </h3>
+            <p>Beyond basics: generators, decorators, typing, and performance — write code that scales.</p>
+            <div class="roadmap-tags">
+              <span>python</span><span>typing</span><span>profiling</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+              <span class="pct">95%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 4 -->
+        <div class="roadmap-step" data-step="4">
+          <div class="step-content">
+            <h3>
+              <span>🧠 Deep learning fundamentals</span>
+              <span class="badge-pill">core</span>
+            </h3>
+            <p>Neural networks, backpropagation, activation functions — from scratch with PyTorch.</p>
+            <div class="roadmap-tags">
+              <span>pytorch</span><span>backprop</span><span>CNNs</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 65%;"></div></div>
+              <span class="pct">65%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 5 -->
+        <div class="roadmap-step" data-step="5">
+          <div class="step-content">
+            <h3>
+              <span>⚙️ ML engineering &amp; MLOps</span>
+              <span class="badge-pill">advanced</span>
+            </h3>
+            <p>Deployment, monitoring, versioning, and pipelines — turn models into products.</p>
+            <div class="roadmap-tags">
+              <span>docker</span><span>mlflow</span><span>fastapi</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 40%;"></div></div>
+              <span class="pct">40%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 6 -->
+        <div class="roadmap-step" data-step="6">
+          <div class="step-content">
+            <h3>
+              <span>🤖 Generative AI &amp; LLMs</span>
+              <span class="badge-pill">cutting-edge</span>
+            </h3>
+            <p>Transformers, fine-tuning, RAG, and prompt engineering — build with GPT, Llama, and more.</p>
+            <div class="roadmap-tags">
+              <span>transformers</span><span>RAG</span><span>langchain</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 25%;"></div></div>
+              <span class="pct">25%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- step 7 -->
+        <div class="roadmap-step" data-step="7">
+          <div class="step-content">
+            <h3>
+              <span>🚀 Capstone: AI product</span>
+              <span class="badge-pill">portfolio</span>
+            </h3>
+            <p>End-to-end project: from problem definition to deployment, with a polished demo.</p>
+            <div class="roadmap-tags">
+              <span>full-stack</span><span>deployment</span><span>presentation</span>
+            </div>
+            <div class="step-progress">
+              <div class="progress-track"><div class="progress-fill" style="width: 10%;"></div></div>
+              <span class="pct">10%</span>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /roadmap-track -->
+
+      <!-- call to action -->
+      <div style="text-align: center; margin-top: 48px; padding: 12px 0;">
+        <a href="#" class="btn btn-primary" style="gap: 10px;">
+          <span>📘</span> Start the AI engineer track
+        </a>
+        <p style="color: var(--ink-soft); margin-top: 14px; font-size: .9rem;">
+          ⚡ 7 modules · 40+ hours of content · community projects
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:12px;">
+            <span class="dots"><span></span><span></span><span></span></span>
+            CodeForge
+          </div>
+          <p class="tag">Build the future, one line at a time.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <a href="#">Dashboard</a>
+          <a href="#">Courses</a>
+          <a href="#">Roadmap</a>
+          <a href="#">About</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Discord</a>
+          <a href="#">YouTube</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Code of conduct</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 CodeForge Academy</span>
+        <span>⌨️ crafted with ☕ and 🐧</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       JavaScript: mobile nav + progress animation on scroll (optional)
+  ========================================================= -->
+  <script>
+    (function() {
+      // --- mobile nav toggle ---
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          links.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!links.contains(e.target) && !toggle.contains(e.target)) {
+            links.classList.remove('open');
+          }
+        });
+      }
+
+      // --- progress fill animation: when steps come into view, we re-trigger width
+      // (they already have inline width, but we can animate on load / scroll)
+      const fills = document.querySelectorAll('.progress-fill');
+      // set width to 0 first, then animate after a tiny delay (for dramatic effect)
+      fills.forEach(fill => {
+        const w = fill.style.width; // store original target
+        fill.style.width = '0%';
+        setTimeout(() => {
+          fill.style.width = w;
+        }, 300);
+      });
+
+      // optional: re-animate on scroll (just for fun)
+      let animated = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            fills.forEach(fill => {
+              const w = fill.getAttribute('data-width') || fill.style.width;
+              if (w && w !== '0%') {
+                fill.style.width = '0%';
+                setTimeout(() => { fill.style.width = w; }, 200);
+              }
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      const track = document.querySelector('.roadmap-track');
+      if (track) observer.observe(track);
+
+      // store original widths for later
+      fills.forEach(fill => {
+        const w = fill.style.width;
+        if (w) fill.setAttribute('data-width', w);
+      });
+
+    })();
+  </script>
+</body>
+</html>
